@@ -1,0 +1,11 @@
+apiVersion: rudro.dev/v1alpha1
+kind: Kluster
+metadata:
+  name: example
+  namespace: sample
+spec:
+  name: kluster
+  replicas: 2
+  container:
+    image: rudro25/bookapiserver
+    port: 8080

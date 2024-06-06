@@ -18,7 +18,7 @@ type Kluster struct {
 type KlusterSpec struct {
 	Name      string        `json:"name,omitempty"`
 	Replicas  *int32        `json:"replicas"`
-	Container ContainerSpec `json:"container,omitempty"`
+	Container ContainerSpec `json:"container,container"`
 }
 
 type KlusterStatus struct {
@@ -33,8 +33,8 @@ type ContainerSpec struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type KlusterList struct {
-	metav1.TypeMeta   `json:",inline"`
-	metav1.ObjectMeta `json:"metadata,omitempty"`
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata,omitempty"`
 
 	Items []Kluster `json:"items"`
 }
