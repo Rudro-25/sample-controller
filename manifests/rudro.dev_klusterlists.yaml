@@ -61,6 +61,7 @@ spec:
                       format: int32
                       type: integer
                   required:
+                  - container
                   - replicas
                   type: object
                 status:
